@@ -10,7 +10,6 @@ This project investigates heavy metal contamination in Xylocopa frontalis bee br
 - **/results**: Analysis results and generated figures.
 
 ## How to Use
-git commit -m "first commit"
 1. Clone this repository:
    ```sh
    git clone https://github.com/araujotn/bee-bread-heavy-metals.git
@@ -18,12 +17,14 @@ git commit -m "first commit"
 
 2. Open R or RStudio and set the working directory to the project folder:
    ```r
-   setwd("path/to/Heavy-metal-contamination-in-bees-larval-food")
+   setwd("path/to/bee-bread-heavy-metals")
    ```
 
 3. Install the required R packages (example):
    ```r
-   install.packages(c("robustbase", "car", "sdmTMB", "glmmTMB", "dplyr", "DHARMa", "ggplot2", "ggpubr", "gridExtra", "vegan"))
+   packages <- c("robustbase", "car", "sdmTMB", "glmmTMB", "dplyr", "DHARMa", "ggplot2", "ggpubr", "gridExtra", "vegan")
+   installed <- packages %in% rownames(installed.packages())
+   if(any(!installed)) install.packages(packages[!installed])
    ```
 
 4. Run the analysis scripts in the `/src` folder:
